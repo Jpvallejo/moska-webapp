@@ -1,0 +1,534 @@
+@import 'variables.scss';
+
+// SIMPLE GRID - SASS/SCSS
+
+// universal
+
+@mixin mobile() {
+  @media(max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin mob-land-tabl-port() {
+  @media(min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin mobile-tabl-port() {
+  @media(max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape() {
+  @media(min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin device() {
+  @media(max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media(min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin firefox-browser () {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin ie-browser() {
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin safari-browser(){
+  @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    @content;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+}
+
+// utility
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm, .hidden-xs, .hidden-md, .hidden-lg {
+  display: none;
+}
+
+// grid
+$width: 96%;
+$gutter: 4%;
+$breakpoint-small: 33.75em; // 540px
+$breakpoint-med: 45em; // 720px
+$breakpoint-large: 60em; // 960px
+$container-width: 90%;
+$container-mobile-internal-margin: ($container-width/100%) * $gutter;
+$container-mobile-internal-width: $container-width - $container-mobile-internal-margin;
+$container-mobile-external-margin: 100% - $container-width + $container-mobile-internal-margin;
+
+@mixin mobile-internal-width() {
+  @include mobile() {
+    width: $container-mobile-internal-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.container {
+  width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: $breakpoint-small) {
+    max-width: 580px;
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    max-width: 580px;
+  }
+}
+
+.container-xl {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.container-logo-left {
+  width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: $breakpoint-small) {
+    width: $container-width;
+    max-width: 572px;
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    width: $container-width;
+    max-width: 1090px;
+  }
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: $width;
+}
+
+.col-1 {
+  width: ($width / 12) - ($gutter * 11 / 12);
+}
+
+.col-2 {
+  width: ($width / 6) - ($gutter * 10 / 12);
+}
+
+.col-3 {
+  width: ($width / 4) - ($gutter * 9 / 12);
+}
+
+.col-4 {
+  width: ($width / 3) - ($gutter * 8 / 12);
+}
+
+.col-5 {
+  width: ($width / (12 / 5)) - ($gutter * 7 / 12);
+}
+
+.col-6 {
+  width: ($width / 2) - ($gutter * 6 / 12);
+}
+
+.col-7 {
+  width: ($width / (12 / 7)) - ($gutter * 5 / 12);
+}
+
+.col-8 {
+  width: ($width / (12 / 8)) - ($gutter * 4 / 12);
+}
+
+.col-9 {
+  width: ($width / (12 / 9)) - ($gutter * 3 / 12);
+}
+
+.col-10 {
+  width: ($width / (12 / 10)) - ($gutter * 2 / 12);
+}
+
+.col-11 {
+  width: ($width / (12 / 11)) - ($gutter * 1 / 12);
+}
+
+.col-12 {
+  width: $width;
+}
+
+@include desktop() {
+  .col-1-lg {
+    width: ($width / 12) - ($gutter * 11 / 12);
+  }
+  .col-2-lg {
+    width: ($width / 6) - ($gutter * 10 / 12);
+  }
+  .col-3-lg {
+    width: ($width / 4) - ($gutter * 9 / 12);
+  }
+  .col-4-lg {
+    width: ($width / 3) - ($gutter * 8 / 12);
+  }
+  .col-5-lg {
+    width: ($width / (12 / 5)) - ($gutter * 7 / 12);
+  }
+  .col-6-lg {
+    width: ($width / 2) - ($gutter * 6 / 12);
+  }
+  .col-7-lg {
+    width: ($width / (12 / 7)) - ($gutter * 5 / 12);
+  }
+  .col-8-lg {
+    width: ($width / (12 / 8)) - ($gutter * 4 / 12);
+  }
+  .col-9-lg {
+    width: ($width / (12 / 9)) - ($gutter * 3 / 12);
+  }
+  .col-10-lg {
+    width: ($width / (12 / 10)) - ($gutter * 2 / 12);
+  }
+  .col-11-lg {
+    width: ($width / (12 / 11)) - ($gutter * 1 / 12);
+  }
+  .col-12-lg {
+    width: $width;
+  }
+}
+
+@include tablet-landscape() {
+  .col-1-md {
+    width: ($width / 12) - ($gutter * 11 / 12);
+  }
+  .col-2-md {
+    width: ($width / 6) - ($gutter * 10 / 12);
+  }
+  .col-3-md {
+    width: ($width / 4) - ($gutter * 9 / 12);
+  }
+  .col-4-md {
+    width: ($width / 3) - ($gutter * 8 / 12);
+  }
+  .col-5-md {
+    width: ($width / (12 / 5)) - ($gutter * 7 / 12);
+  }
+  .col-6-md {
+    width: ($width / 2) - ($gutter * 6 / 12);
+  }
+  .col-7-md {
+    width: ($width / (12 / 7)) - ($gutter * 5 / 12);
+  }
+  .col-8-md {
+    width: ($width / (12 / 8)) - ($gutter * 4 / 12);
+  }
+  .col-9-md {
+    width: ($width / (12 / 9)) - ($gutter * 3 / 12);
+  }
+  .col-10-md {
+    width: ($width / (12 / 10)) - ($gutter * 2 / 12);
+  }
+  .col-11-md {
+    width: ($width / (12 / 11)) - ($gutter * 1 / 12);
+  }
+  .col-12-md {
+    width: $width;
+  }
+}
+
+@include mob-land-tabl-port() {
+  .col-1-sm {
+    width: ($width / 12) - ($gutter * 11 / 12);
+  }
+  .col-2-sm {
+    width: ($width / 6) - ($gutter * 10 / 12);
+  }
+  .col-3-sm {
+    width: ($width / 4) - ($gutter * 9 / 12);
+  }
+  .col-4-sm {
+    width: ($width / 3) - ($gutter * 8 / 12);
+  }
+  .col-5-sm {
+    width: ($width / (12 / 5)) - ($gutter * 7 / 12);
+  }
+  .col-6-sm {
+    width: ($width / 2) - ($gutter * 6 / 12);
+  }
+  .col-7-sm {
+    width: ($width / (12 / 7)) - ($gutter * 5 / 12);
+  }
+  .col-8-sm {
+    width: ($width / (12 / 8)) - ($gutter * 4 / 12);
+  }
+  .col-9-sm {
+    width: ($width / (12 / 9)) - ($gutter * 3 / 12);
+  }
+  .col-10-sm {
+    width: ($width / (12 / 10)) - ($gutter * 2 / 12);
+  }
+  .col-11-sm {
+    width: ($width / (12 / 11)) - ($gutter * 1 / 12);
+  }
+  .col-12-sm {
+    width: $width;
+  }
+}
+
+@include mobile() {
+  .col-1-xs {
+    width: ($width / 12) - ($gutter * 11 / 12);
+  }
+  .col-2-xs {
+    width: ($width / 6) - ($gutter * 10 / 12);
+  }
+  .col-3-xs {
+    width: ($width / 4) - ($gutter * 9 / 12);
+  }
+  .col-4-xs {
+    width: ($width / 3) - ($gutter * 8 / 12);
+  }
+  .col-5-xs {
+    width: ($width / (12 / 5)) - ($gutter * 7 / 12);
+  }
+  .col-6-xs {
+    width: ($width / 2) - ($gutter * 6 / 12);
+  }
+  .col-7-xs {
+    width: ($width / (12 / 7)) - ($gutter * 5 / 12);
+  }
+  .col-8-xs {
+    width: ($width / (12 / 8)) - ($gutter * 4 / 12);
+  }
+  .col-9-xs {
+    width: ($width / (12 / 9)) - ($gutter * 3 / 12);
+  }
+  .col-10-xs {
+    width: ($width / (12 / 10)) - ($gutter * 2 / 12);
+  }
+  .col-11-xs {
+    width: ($width / (12 / 11)) - ($gutter * 1 / 12);
+  }
+  .col-12-xs {
+    width: $width;
+  }
+}
+
+// Responsive utilities
+
+// MIXING FOR SET DISPLAY BLOCK FOR A CLASS
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block !important;
+  }
+}
+
+// MIXING FOR SET DISPLAY NONE FOR A CLASS
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}
+
+// Visibility utilities
+/// IN THIS CASE THIS IS SETTING VISIBILITY TO THAT CLASSES
+@include responsive-invisibility('.visible-xs');
+@include responsive-invisibility('.visible-sm');
+@include responsive-invisibility('.visible-md');
+@include responsive-invisibility('.visible-lg');
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS XS TO VISIBLE-XS CLASS
+@media (max-width: $screen-xs-max) {
+  @include responsive-visibility('.visible-xs');
+}
+
+.visible-xs-block {
+  @media (max-width: $screen-xs-max) {
+    display: block !important;
+  }
+}
+
+.visible-xs-inline {
+  @media (max-width: $screen-xs-max) {
+    display: inline !important;
+  }
+}
+
+.visible-xs-inline-block {
+  @media (max-width: $screen-xs-max) {
+    display: inline-block !important;
+  }
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS XS TO VISIBLE-SM CLASS
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-visibility('.visible-sm');
+}
+
+.visible-sm-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: block !important;
+  }
+}
+
+.visible-sm-inline {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline !important;
+  }
+}
+
+.visible-sm-inline-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline-block !important;
+  }
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS SM TO VISIBLE-SM CLASS
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-visibility('.visible-md');
+}
+
+.visible-md-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: block !important;
+  }
+}
+
+.visible-md-inline {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline !important;
+  }
+}
+
+.visible-md-inline-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline-block !important;
+  }
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS LG TO VISIBLE-LG CLASS
+@media (min-width: $screen-lg-min) {
+  @include responsive-visibility('.visible-lg');
+}
+
+.visible-lg-block {
+  @media (min-width: $screen-lg-min) {
+    display: block !important;
+  }
+}
+
+.visible-lg-inline {
+  @media (min-width: $screen-lg-min) {
+    display: inline !important;
+  }
+}
+
+.visible-lg-inline-block {
+  @media (min-width: $screen-lg-min) {
+    display: inline-block !important;
+  }
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS XS TO HIDDEN-XS CLASS
+@media (max-width: $screen-xs-max) {
+  @include responsive-invisibility('.hidden-xs');
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS SM TO HIDDEN-SM CLASS
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-invisibility('.hidden-sm');
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS MD TO HIDDEN-MD CLASS
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-invisibility('.hidden-md');
+}
+
+///SETTING VISIBILITY WHEN THE SCREEN IS LG TO HIDDEN-LG CLASS
+@media (min-width: $screen-lg-min) {
+  @include responsive-invisibility('.hidden-lg');
+}

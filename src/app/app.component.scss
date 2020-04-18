@@ -1,4 +1,21 @@
+@import "../styles/mixins";
+@import "../styles/grid";
 
-.menu-spacer{
+.menu-spacer {
   flex: 1 1 auto;
+}
+
+.profile-toolbar {
+  @include mobile() {
+    display: none;
+  }
+}
+
+.profile-sidenav {
+  display: none;
+  position:absolute;
+  bottom:0;
+  @include mobile() {
+    display: block;
+  }
 }

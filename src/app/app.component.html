@@ -5,7 +5,7 @@
     </button>
     <h1>Moska</h1>
     <span class="menu-spacer"></span>
-    <div *ngIf="!userIsLoggedIn">
+    <div class="profile-toolbar">
       <a mat-button [routerLink]="'/login'"> Login </a>
       <a mat-button [routerLink]="'/create-account'"> Create Account </a>
     </div>
@@ -24,7 +24,12 @@
       <a mat-list-item [routerLink]="['/' + constant.ROUTE.PROFILE]" (click)="sidenav.toggle()"> {{ 'GLOBAL.PROFILE' | translate }} </a>
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>{{ 'LAYOUT.SIGN_OUT' | translate }} </a>
 
+      <div class="profile-sidenav">
+        <a mat-list-item [routerLink]="'/login'"> Login </a>
+        <a mat-list-item [routerLink]="'/create-account'"> Register </a>
+      </div>
     </mat-nav-list>
+
   </mat-sidenav>
   <mat-sidenav-content>
     <div style="height: 88vh;">
