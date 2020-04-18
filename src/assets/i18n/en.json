@@ -1,0 +1,16 @@
+{
+  "GLOBAL" : {
+    "DASHBOARD": "Dashboard",
+    "EXPENSES": "Expenses",
+    "INCOMES": "Incomes",
+    "CREDIT_CARDS": "Credit Cards",
+    "ACCOUNTS": "Accounts",
+    "PROFILE": "My Profile"
+  },
+
+  "LAYOUT": {
+    "SIGN_IN": "Sign In",
+    "SIGN_OUT": "Sign Out",
+    "CREATE_ACCOUNT": "Create Account"
+  }
+}
