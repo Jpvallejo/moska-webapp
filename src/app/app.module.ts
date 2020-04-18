@@ -13,6 +13,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ExpensesComponent } from './expenses/expenses.component';
+import { IncomesComponent } from './incomes/incomes.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CreditCardsComponent } from './credit-cards/credit-cards.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -20,10 +28,17 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExpensesComponent,
+    IncomesComponent,
+    AccountsComponent,
+    ProfileComponent,
+    CreditCardsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
