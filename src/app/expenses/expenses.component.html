@@ -1,1 +1,9 @@
-<p>expenses works!</p>
+<mat-list>
+    <mat-list-item *ngFor="let expense of expenses">
+      <h3 matLine> {{expense.description}} </h3>
+      <p matLine>
+        <span> {{expense.date}} </span>
+      </p>
+      <span class="expense-amount">{{expense.amount}} </span>
+    </mat-list-item>
+  </mat-list>

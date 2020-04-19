@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+
 export const baseRoute = {
 
   // expenses routes
@@ -37,3 +39,9 @@ export const constant = {
     DASHBOARD: 'Dashboard'
   }
 };
+
+export const apiConstants = {
+  EXPENSES: {
+    CORE: environment.UX_API.URL + 'expenses',
+  }
+}

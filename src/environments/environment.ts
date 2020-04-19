@@ -4,8 +4,15 @@
 
 export const environment = {
   production: false,
-  ROUTE_USE_HASH: false
+  ROUTE_USE_HASH: false,
+
+  UX_API: {
+    URL: 'https://moska-api.herokuapp.com/',
+    CLIENT_ID: '686d23796c3644fe8c2a1a34adb16b2c',
+    CLIENT_SECRET: 'eC0490D4b3b84be2a8D20b69CFBE516a'
+  },
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
