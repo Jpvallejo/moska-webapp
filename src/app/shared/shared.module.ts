@@ -15,6 +15,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forRoot(routes),
     MatButtonModule,
     MatMenuModule,
@@ -51,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
   ],
   exports: [
+    FormsModule,
     CommonModule,
     MatButtonModule,
     MatMenuModule,

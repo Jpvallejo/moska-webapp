@@ -1,0 +1,47 @@
+<body class="bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="">
+          <div *ngIf="loggedIn===false">
+            <form [formGroup]="signinForm">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" formControlName="email">
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password" >
+              </div>
+            </form>
+            <div>
+              <p>Or</p>
+            </div>
+            <div>
+              <button mat-flat-button color="primary" type="button" (click)="signInWithFB()" class="btn btn-primary">Sign In With Facebook</button>
+              <a mat-flat-button class="oauth-container btn darken-4 white black-text" (click)="signInWithGoogle()" style="text-transform:none">
+                <span class="left">
+                    <img width="20px" style="vertical-align: middle; margin-right:8px" alt="Google sign-in"
+                        src="assets/icons/google-logo.svg" />
+                </span>
+                <span>Sign In with Google</span>
+            </a>
+              <button mat-flat-button color="primary" type="button" (click)="signInWithGoogle()" class="btn btn-primary">Sign In With Google</button>
+            </div>
+          </div>        <div *ngIf="loggedIn===true">
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" id="firstname" [value]="user.firstName" readonly >
+            </div>          <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname" [value]="user.lastName" readonly >
+            </div>          <div class="form-group">
+              <label for="email2">Email</label>
+              <input type="text" class="form-control" id="email2" [value]="user.email" readonly >
+            </div>
+
+            <button mat-flat-button color="primary" type="button" (click)="signOut()">Sign Out</button>         </div>
+        </div>
+      </div>
+    </div>
+  </body>

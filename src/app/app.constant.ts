@@ -1,6 +1,7 @@
 import { environment } from 'src/environments/environment';
 
 export const baseRoute = {
+  SIGN_IN: 'sign-in',
 
   // expenses routes
   EXPENSES: 'expenses',
@@ -29,6 +30,7 @@ export const constant = {
     PROFILE: `${baseRoute.PROFILE}`,
     CREDIT_CARDS: `${baseRoute.CREDIT_CARDS}`,
     DASHBOARD: `${baseRoute.DASHBOARD}`,
+    SIGN_IN: `${baseRoute.SIGN_IN}`,
   },
   PAGE_TITLE : {
     EXPENSES: 'Expenses',
@@ -36,7 +38,8 @@ export const constant = {
     ACCOUNTS: 'Accounts',
     PROFILE: 'My Profile',
     CREDIT_CARDS: 'Credit Cards',
-    DASHBOARD: 'Dashboard'
+    DASHBOARD: 'Dashboard',
+    SIGN_IN: 'Sign In'
   }
 };
 

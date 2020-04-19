@@ -6,8 +6,7 @@
     <h1>Moska</h1>
     <span class="menu-spacer"></span>
     <div class="profile-toolbar">
-      <a mat-button [routerLink]="'/login'"> Login </a>
-      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
+      <a mat-button [routerLink]="['/' + constant.ROUTE.SIGN_IN]"> {{'LAYOUT.SIGN_IN' | translate}} </a>
     </div>
   </mat-toolbar-row>
 
@@ -31,8 +30,7 @@
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>{{ 'LAYOUT.SIGN_OUT' | translate }} </a>
 
       <div class="profile-sidenav">
-        <a mat-list-item [routerLink]="'/login'"> Login </a>
-        <a mat-list-item [routerLink]="'/create-account'"> Register </a>
+          <a mat-button [routerLink]="['/' + constant.ROUTE.SIGN_IN]"> {{'LAYOUT.SIGN_IN' | translate}} </a>
       </div>
     </mat-nav-list>
 

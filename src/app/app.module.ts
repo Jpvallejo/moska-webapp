@@ -8,7 +8,7 @@ import { CreditCardsComponent } from './credit-cards/credit-cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from './shared/shared.module';
 import { ExpensesModule } from './expenses/expenses.module';
-import { RouterModule } from '@angular/router';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +17,10 @@ import { RouterModule } from '@angular/router';
     AccountsComponent,
     ProfileComponent,
     CreditCardsComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
+    LoginModule,
     SharedModule,
     ExpensesModule,
     BrowserModule

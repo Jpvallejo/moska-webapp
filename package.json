@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl --ssl-key server.key --ssl-cert server.crt --host 0.0.0.0",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "@angular/router": "~9.0.5",
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
+    "angularx-social-login": "^2.2.1",
     "rxjs": "~6.5.4",
     "ts-money": "^0.4.6",
     "tslib": "^1.10.0",

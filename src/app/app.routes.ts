@@ -8,6 +8,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreditCardsComponent } from './credit-cards/credit-cards.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,11 @@ const routes: Routes = [
     path: constant.ROUTE.DASHBOARD,
     component: DashboardComponent,
     data: { title: constant.PAGE_TITLE.DASHBOARD }
+  },
+  {
+    path: constant.ROUTE.SIGN_IN,
+    component: LoginComponent,
+    data: { title: constant.PAGE_TITLE.SIGN_IN }
   },
   // {
   //   path: constant.ROUTE.ERROR.NOT_FOUND,
