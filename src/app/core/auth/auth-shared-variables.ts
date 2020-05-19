@@ -1,7 +1,6 @@
-import {constant} from '../../app.constant';
+import { constant } from '../../app.constant';
 
 export abstract class AuthSharedVariables {
-
   protected abstract setVariable(key: string, value: string, expirationTime?: number): void;
 
   protected abstract getVariable(key: string): string;

@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from '../app.routes';
@@ -16,8 +15,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AbstractTransactionDialogComponent } from './dialog/transaction-dialog/transaction-dialog.component';
 
@@ -26,11 +25,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [
-    AbstractTransactionDialogComponent
-  ],
-  entryComponents: [
-  ],
+  declarations: [AbstractTransactionDialogComponent],
+  entryComponents: [],
   imports: [
     CommonModule,
     FormsModule,
@@ -52,10 +48,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-    }
+        deps: [HttpClient],
+      },
     }),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [CurrencyPipe],
   exports: [
@@ -73,8 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatTableModule,
     ReactiveFormsModule,
     TranslateModule,
-    RouterModule
-  ]
+    RouterModule,
+  ],
 })
-export class SharedModule {
-}
+export class SharedModule {}

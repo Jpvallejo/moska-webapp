@@ -1,17 +1,14 @@
-import {throwError} from 'rxjs';
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {AuthCookieManager} from '../auth-cookie-manager';
+import { throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { AuthCookieManager } from '../auth-cookie-manager';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import {catchError} from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { apiConstants } from 'src/app/app.constant';
 
 @Injectable()
 export class AuthService {
-
-  constructor(private httpClient: HttpClient,
-              private authSharedVariables: AuthCookieManager) {
-  }
+  constructor(private httpClient: HttpClient, private authSharedVariables: AuthCookieManager) {}
 
   private jwtHelper = new JwtHelperService();
 
@@ -20,12 +17,10 @@ export class AuthService {
     const body = {
       email,
       firstName,
-      lastName
+      lastName,
     };
     const url = apiConstants.AUTH.CORE;
-    return this.httpClient.post<any>(url, body).pipe(
-      catchError(this.handleErrorObservable));
-
+    return this.httpClient.post<any>(url, body).pipe(catchError(this.handleErrorObservable));
   }
 
   saveAuthorizationToken(token: string) {
@@ -75,5 +70,4 @@ export class AuthService {
 
     return throwError(error.error);
   }
-
 }

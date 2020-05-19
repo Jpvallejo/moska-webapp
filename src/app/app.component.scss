@@ -1,5 +1,5 @@
-@import "../styles/mixins";
-@import "../styles/grid";
+@import '../styles/mixins';
+@import '../styles/grid';
 
 .menu-spacer {
   flex: 1 1 auto;
@@ -13,8 +13,8 @@
 
 .profile-sidenav {
   display: none;
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  bottom: 0;
   @include mobile() {
     display: block;
   }

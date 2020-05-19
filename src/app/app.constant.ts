@@ -19,11 +19,11 @@ export const baseRoute = {
   CREDIT_CARDS: 'credit-cards',
 
   // dashboard routes
-  DASHBOARD: ''
+  DASHBOARD: '',
 };
 
 export const constant = {
-  ROUTE : {
+  ROUTE: {
     EXPENSES: `${baseRoute.EXPENSES}`,
     INCOMES: `${baseRoute.INCOMES}`,
     ACCOUNTS: `${baseRoute.ACCOUNTS}`,
@@ -32,14 +32,14 @@ export const constant = {
     DASHBOARD: `${baseRoute.DASHBOARD}`,
     SIGN_IN: `${baseRoute.SIGN_IN}`,
   },
-  PAGE_TITLE : {
+  PAGE_TITLE: {
     EXPENSES: 'Expenses',
     INCOMES: 'Incomes',
     ACCOUNTS: 'Accounts',
     PROFILE: 'My Profile',
     CREDIT_CARDS: 'Credit Cards',
     DASHBOARD: 'Dashboard',
-    SIGN_IN: 'Sign In'
+    SIGN_IN: 'Sign In',
   },
 
   COOKIE: {
@@ -48,7 +48,7 @@ export const constant = {
     USER_ID: 'user_id',
     USER_EMAIL: 'user_email',
     USER_FIRST_NAME: 'user_first_name',
-    USER_LAST_NAME: 'user_last_name'
+    USER_LAST_NAME: 'user_last_name',
   },
 };
 
@@ -57,6 +57,6 @@ export const apiConstants = {
     CORE: environment.UX_API.URL + 'expenses',
   },
   AUTH: {
-    CORE: environment.UX_API.URL + 'auth'
-  }
+    CORE: environment.UX_API.URL + 'auth',
+  },
 };

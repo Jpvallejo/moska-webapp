@@ -1,4 +1,4 @@
-import {environment} from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 // import {API_CONSTANTS} from '../services/endpoints.constant';
 
 export const AUTH_CONSTANTS = {
@@ -11,5 +11,5 @@ export const AUTH_CONSTANTS = {
   EXPIRES_IN_PARAM: 'expires_in',
   ERROR_PARAM: 'error',
   ERROR_DESCRIPTION_PARAM: 'error_description',
-  CLIENT_REQUEST_ID_PARAM: 'client-request-id'
+  CLIENT_REQUEST_ID_PARAM: 'client-request-id',
 };

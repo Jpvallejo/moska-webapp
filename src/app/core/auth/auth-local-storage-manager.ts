@@ -1,7 +1,6 @@
-import {AuthSharedVariables} from './auth-shared-variables';
+import { AuthSharedVariables } from './auth-shared-variables';
 
 export class AuthLocalStorageManager extends AuthSharedVariables {
-
   protected setVariable(key: string, value: string, expirationTime?: number): void {
     localStorage.setItem(key, value);
   }

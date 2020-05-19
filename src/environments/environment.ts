@@ -9,21 +9,20 @@ export const environment = {
   UX_API: {
     URL: 'https://moska-api.herokuapp.com/',
     CLIENT_ID: '686d23796c3644fe8c2a1a34adb16b2c',
-    CLIENT_SECRET: 'eC0490D4b3b84be2a8D20b69CFBE516a'
+    CLIENT_SECRET: 'eC0490D4b3b84be2a8D20b69CFBE516a',
   },
 
   BASE: {
     HTML_URL: '/',
-    RES_URL: '/'
+    RES_URL: '/',
   },
 
   OAUTH: {
     GOOGLE_APP_ID: '1020253205438-fpdqjv40iaq73d7u5nm9rth6orfmuga5.apps.googleusercontent.com',
-    FACEBOOK_APP_ID: ''
+    FACEBOOK_APP_ID: '',
   },
-  JWT_SECRET_KEY: 'gmOfLtMS1/6zdF4j18+5[]@OT"IWj>xd'
+  JWT_SECRET_KEY: 'gmOfLtMS1/6zdF4j18+5[]@OT"IWj>xd',
 };
-
 
 /*
  * For easier debugging in development mode, you can import the following file

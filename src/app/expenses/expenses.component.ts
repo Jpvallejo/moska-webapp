@@ -5,19 +5,16 @@ import { Expense } from './models/expense.model';
 @Component({
   selector: 'app-expenses',
   templateUrl: './expenses.component.html',
-  styleUrls: ['./expenses.component.scss']
+  styleUrls: ['./expenses.component.scss'],
 })
 export class ExpensesComponent implements OnInit {
-
   public expenses: Expense[];
 
-  constructor(public expensesService: ExpensesService) { }
+  constructor(public expensesService: ExpensesService) {}
 
   ngOnInit(): void {
     this.expensesService.getExpenses().subscribe((expenses) => {
-      this.expenses = expenses.filter(x => x);
+      this.expenses = expenses.filter((x) => x);
     });
   }
-
-
 }

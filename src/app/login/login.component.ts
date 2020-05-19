@@ -6,7 +6,7 @@ import { LoginService } from './services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   signinForm: FormGroup;
@@ -17,9 +17,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.signinForm = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     });
-    this.authService.authState.subscribe(user => {
+    this.authService.authState.subscribe((user) => {
       if (user) {
         this.loginService.handleLogin(user);
       }

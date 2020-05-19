@@ -8,9 +8,8 @@ describe('CreateExpenseDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateExpenseDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [CreateExpenseDialogComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

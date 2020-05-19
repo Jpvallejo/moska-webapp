@@ -9,28 +9,23 @@ import { environment } from 'src/environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
-  declarations: [
-  ],
-  entryComponents: [
-  ],
-  imports: [
-    SharedModule
-  ],
+  declarations: [],
+  entryComponents: [],
+  imports: [SharedModule],
   providers: [
     AuthService,
     AuthCookieManager,
     CookieService,
     AuthInterceptorService,
     {
-      provide : HTTP_INTERCEPTORS,
+      provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi   : true
+      multi: true,
     },
     {
       provide: COOKIE_PATH,
-      useValue: environment.BASE.HTML_URL
+      useValue: environment.BASE.HTML_URL,
     },
-  ]
+  ],
 })
-export class AuthModule {
-}
+export class AuthModule {}

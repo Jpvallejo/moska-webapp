@@ -19,16 +19,9 @@ import { LoginModule } from './login/login.module';
     CreditCardsComponent,
     DashboardComponent,
   ],
-  imports: [
-    LoginModule,
-    SharedModule,
-    ExpensesModule,
-    BrowserModule
-  ],
-  exports: [
-  ],
-  providers: [
-  ],
-  bootstrap: [AppComponent]
+  imports: [LoginModule, SharedModule, ExpensesModule, BrowserModule],
+  exports: [],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
