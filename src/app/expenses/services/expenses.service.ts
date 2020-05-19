@@ -19,6 +19,12 @@ export class ExpensesService {
       catchError(this.handleErrorObservable));
   }
 
+  public addExpense(expense: Expense) {
+    const url = apiConstants.EXPENSES.CORE;
+    return this.httpClient.post(url, expense).pipe(
+      catchError(this.handleErrorObservable));
+  }
+
   private handleErrorObservable(error: HttpErrorResponse) {
     const errorDto = error.error;
     errorDto.status = error.status;

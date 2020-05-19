@@ -4,6 +4,8 @@ import { LoginComponent } from './login.component';
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { AuthModule } from '../core/auth/auth.module';
+import { LoginService } from './services/login.service';
 
 const config = new AuthServiceConfig([
   {
@@ -27,6 +29,7 @@ export function provideConfig() {
   ],
   imports: [
     SharedModule,
+    AuthModule,
     ReactiveFormsModule,
     SocialLoginModule
   ],
@@ -34,7 +37,8 @@ export function provideConfig() {
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
-    }
+    },
+    LoginService
   ],
   bootstrap: [LoginComponent]
 })

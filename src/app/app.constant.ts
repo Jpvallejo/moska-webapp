@@ -40,11 +40,23 @@ export const constant = {
     CREDIT_CARDS: 'Credit Cards',
     DASHBOARD: 'Dashboard',
     SIGN_IN: 'Sign In'
-  }
+  },
+
+  COOKIE: {
+    ACCESS_TOKEN: 'access_token',
+    REFRESH_TOKEN: 'refresh_token',
+    USER_ID: 'user_id',
+    USER_EMAIL: 'user_email',
+    USER_FIRST_NAME: 'user_first_name',
+    USER_LAST_NAME: 'user_last_name'
+  },
 };
 
 export const apiConstants = {
   EXPENSES: {
     CORE: environment.UX_API.URL + 'expenses',
+  },
+  AUTH: {
+    CORE: environment.UX_API.URL + 'auth'
   }
 }

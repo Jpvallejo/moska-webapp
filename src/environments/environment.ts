@@ -12,10 +12,16 @@ export const environment = {
     CLIENT_SECRET: 'eC0490D4b3b84be2a8D20b69CFBE516a'
   },
 
+  BASE: {
+    HTML_URL: '/',
+    RES_URL: '/'
+  },
+
   OAUTH: {
     GOOGLE_APP_ID: '1020253205438-fpdqjv40iaq73d7u5nm9rth6orfmuga5.apps.googleusercontent.com',
     FACEBOOK_APP_ID: ''
-  }
+  },
+  JWT_SECRET_KEY: 'gmOfLtMS1/6zdF4j18+5[]@OT"IWj>xd'
 };
 
 

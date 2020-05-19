@@ -14,8 +14,12 @@ import { MatListModule } from '@angular/material/list';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule, CurrencyPipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AbstractTransactionDialogComponent } from './dialog/transaction-dialog/transaction-dialog.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,7 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-
+    AbstractTransactionDialogComponent
   ],
   entryComponents: [
   ],
@@ -31,11 +35,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     CommonModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    MatFormFieldModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
+    MatInputModule,
+    MatTableModule,
     MatIconModule,
     MatCardModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -49,9 +57,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     HttpClientModule
   ],
-  providers: [
-
-  ],
+  providers: [CurrencyPipe],
   exports: [
     FormsModule,
     CommonModule,
@@ -62,6 +68,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatCardModule,
     MatSidenavModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    ReactiveFormsModule,
     TranslateModule,
     RouterModule
   ]

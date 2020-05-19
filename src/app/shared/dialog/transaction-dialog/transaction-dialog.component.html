@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="transactionForm">
+    <mat-form-field class="full-width" hideRequiredMarker>
+      <input matInput placeholder="{{ 'CREATE_ACCOUNT.CONTACT_INFO_STEP.FIRST_NAME' | translate}}"
+              name="description" formControlName="description" #focusInput>
+      <mat-error *ngIf="description.hasError('required') && description.touched">{{
+        'CREATE_ACCOUNT.CONTACT_INFO_STEP.ERROR.FIELD_REQUIRED' |
+        translate}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" hideRequiredMarker>
+        <input matInput placeholder="{{ 'CREATE_ACCOUNT.CONTACT_INFO_STEP.FIRST_NAME' | translate}}"
+                name="amount" formControlName="amount"  #focusInput>
+        <mat-error *ngIf="amount.hasError('required') && description.touched">{{
+          'CREATE_ACCOUNT.CONTACT_INFO_STEP.ERROR.FIELD_REQUIRED' |
+          translate}}
+        </mat-error>
+      </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onCreate()" cdkFocusInitial>Create</button>
+</div>
