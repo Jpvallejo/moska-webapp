@@ -12,21 +12,19 @@ export class LoginComponent implements OnInit {
   signinForm: FormGroup;
   user: SocialUser;
   loggedIn: boolean;
-  constructor(private fb: FormBuilder,
-              private authService: AuthService,
-              private loginService: LoginService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private loginService: LoginService) {}
 
   ngOnInit() {
     this.signinForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
-    this.authService.authState.subscribe((user) => {
+    this.authService.authState.subscribe(user => {
       if (user) {
         this.loginService.handleLogin(user);
       }
       this.user = user;
-      this.loggedIn = (user != null);
+      this.loggedIn = user != null;
     });
   }
 

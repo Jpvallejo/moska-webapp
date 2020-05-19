@@ -59,4 +59,4 @@ export const apiConstants = {
   AUTH: {
     CORE: environment.UX_API.URL + 'auth'
   }
-}
+};
